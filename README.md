@@ -1,3 +1,3 @@
-# MyHeartbeat
+# DriverStatus
 
-Android Wear Demo showing the heartbeat on a Moto 360 smartwatch.
+Android Wear App to show driver's alertness and fatigue based on the sensor values. 
