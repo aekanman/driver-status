@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '23.0.3'
+    signingConfigs {
+        releaseConfig {
+            storeFile file("../gm_keystore.jks")
+            storePassword "GM2908"
+            keyAlias "gm_keystore"
+            keyPassword "GM2908"
+        }
+    }
+    defaultConfig {
+        applicationId "com.gm.android.DriverStatus"
+        minSdkVersion 23
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            debuggable true
+            signingConfig signingConfigs.releaseConfig
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.google.android.support:wearable:+'
+    compile 'com.google.android.gms:play-services-wearable:7.0.0'
+}

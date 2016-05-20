@@ -1,0 +1,166 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:background="@color/bright_foreground_disabled_material_dark"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView android:text="0" android:layout_width="wrap_content"
+            android:id="@+id/heartRate"
+            android:layout_height="98dp"
+            android:textColor="#4e66ff"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Heart Rate:"
+            android:id="@+id/textView"
+            android:layout_gravity="left|top"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Accelerometer:"
+            android:id="@+id/textView2"
+            android:layout_gravity="left|center_vertical"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/accX"
+            android:textIsSelectable="false"
+            android:textSize="20sp"
+            android:layout_above="@+id/accY"
+            android:layout_alignStart="@+id/heartRate" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Gyroscope:"
+            android:id="@+id/textView4"
+            android:layout_marginTop="70dp"
+            android:layout_below="@+id/heartRate"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/gyroX"
+            android:textSize="20sp"
+            android:layout_alignBottom="@+id/gyroXLabel"
+            android:layout_alignStart="@+id/accZ" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="accX"
+            android:id="@+id/accXLabel"
+            android:layout_alignBaseline="@+id/accX"
+            android:layout_alignBottom="@+id/accX"
+            android:layout_alignStart="@+id/accZLabel" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="accY"
+            android:id="@+id/accYLabel"
+            android:layout_alignBottom="@+id/accY"
+            android:layout_alignEnd="@+id/textView2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/accY"
+            android:textIsSelectable="false"
+            android:textSize="20sp"
+            android:layout_below="@+id/heartRate"
+            android:layout_alignStart="@+id/accZ" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="accZ"
+            android:id="@+id/accZLabel"
+            android:layout_below="@+id/accYLabel"
+            android:layout_alignStart="@+id/gyroXLabel" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/accZ"
+            android:textIsSelectable="false"
+            android:textSize="20sp"
+            android:layout_alignBottom="@+id/accZLabel"
+            android:layout_alignStart="@+id/heartRate" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="gyroX"
+            android:id="@+id/gyroXLabel"
+            android:layout_below="@+id/textView4"
+            android:layout_toEndOf="@+id/textView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="gyroY"
+            android:id="@+id/gyroYLabel"
+            android:layout_below="@+id/gyroXLabel"
+            android:layout_toEndOf="@+id/textView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="gyroZ"
+            android:id="@+id/gyroZLabel"
+            android:layout_below="@+id/gyroY"
+            android:layout_toEndOf="@+id/textView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/gyroY"
+            android:textSize="20sp"
+            android:layout_below="@+id/gyroXLabel"
+            android:layout_alignStart="@+id/gyroX" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/gyroZ"
+            android:textSize="20sp"
+            android:layout_below="@+id/gyroY"
+            android:layout_alignStart="@+id/gyroY" />
+
+    </RelativeLayout>
+
+</FrameLayout>
