@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "469052267132",
+    "project_id": "driverstatus-9a222"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:469052267132:android:cb461d876c8f8148",
+        "android_client_info": {
+          "package_name": "com.gm.android.DriverStatus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "469052267132-knv46e9aj18o8lp9viti8udt9fk2nalg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gm.android.DriverStatus",
+            "certificate_hash": "3E96E91A526B7EEA219CED506F612CD19F5C4F02"
+          }
+        },
+        {
+          "client_id": "469052267132-q16gtu3j7cm837tn0q2e4p75h38mr475.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmn_CKZW9HjoQxVNrBRu_LrRAoTCNY9sk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
