@@ -297,6 +297,7 @@ public class sleepHistory extends AppCompatActivity {
         //Log.i(TAG, "Data returned for Data type: " + dataSet.getDataType().getName());
         DateFormat dateFormat = getTimeInstance();
         float sleepHours = 0;
+        String activityType = "";
         for (DataPoint dp : dataSet.getDataPoints()) {
             //Log.i(TAG, dp.getOriginalDataSource().getStreamIdentifier().toString());
             Log.i(TAG, "Data point:");
@@ -304,7 +305,12 @@ public class sleepHistory extends AppCompatActivity {
             Log.i(TAG, "\tStart: " + dateFormat.format(dp.getStartTime(TimeUnit.MILLISECONDS)));
             Log.i(TAG, "\tEnd: " + dateFormat.format(dp.getEndTime(TimeUnit.MILLISECONDS)));
             for(Field field : dp.getDataType().getFields()) {
-                if(dp.getOriginalDataSource().getAppPackageName().toString().contains("sleep") && field.getName().contains("duration")){
+                try {
+                    activityType = dp.getOriginalDataSource().getAppPackageName().toString();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                if(activityType.contains("sleep") && field.getName().contains("duration")){
                     Value value = dp.getValue(field);
                     sleepHours  = (float) (Math.round((value.asInt() * 2.778 * 0.0000001*10.0))/10.0);
                     Log.i(TAG, "\tField: Sleep duration in h " + sleepHours);
