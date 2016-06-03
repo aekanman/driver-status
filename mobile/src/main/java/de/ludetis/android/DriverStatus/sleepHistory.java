@@ -105,8 +105,18 @@ public class sleepHistory extends AppCompatActivity {
                             public void onConnected(Bundle bundle) {
                                 Log.i(TAG, "Connected!!!");
                                 // Now you can make calls to the Fitness APIs.  What to do?
-                                // Look at some data!!
+                                // Insert - Commented out
                                 new InsertAndVerifyDataTask().execute();
+
+//                                DataReadRequest readRequest = queryFitnessData();
+
+                                // [START read_dataset]
+                                // Invoke the History API to fetch the data with the query and await the result of
+                                // the read request.
+//                                DataReadResult dataReadResult =
+//                                        Fitness.HistoryApi.readData(mClient, readRequest).await(0, TimeUnit.MINUTES);
+
+//                                printData(dataReadResult);
                             }
 
                             @Override
@@ -155,19 +165,19 @@ public class sleepHistory extends AppCompatActivity {
             // possible here because of the {@link AsyncTask}. Always include a timeout when calling
             // await() to prevent hanging that can occur from the service being shutdown because
             // of low memory or other conditions.
-            Log.i(TAG, "Inserting the dataset in the History API.");
-            com.google.android.gms.common.api.Status insertStatus =
-                    Fitness.HistoryApi.insertData(mClient, dataSet)
-                            .await(1, TimeUnit.MINUTES);
+//            Log.i(TAG, "Inserting the dataset in the History API.");
+//            com.google.android.gms.common.api.Status insertStatus =
+//                    Fitness.HistoryApi.insertData(mClient, dataSet)
+//                            .await(1, TimeUnit.MINUTES);
 
             // Before querying the data, check to see if the insertion succeeded.
-            if (!insertStatus.isSuccess()) {
-                Log.i(TAG, "There was a problem inserting the dataset.");
-                return null;
-            }
+//            if (!insertStatus.isSuccess()) {
+//                Log.i(TAG, "There was a problem inserting the dataset.");
+//                return null;
+//            }
 
             // At this point, the data has been inserted and can be read.
-            Log.i(TAG, "Data insert was successful!");
+//            Log.i(TAG, "Data insert was successful!");
             // [END insert_dataset]
 
             // Begin by creating the query.
@@ -193,7 +203,7 @@ public class sleepHistory extends AppCompatActivity {
      * Create and return a {@link DataSet} of step count data for insertion using the History API.
      */
     private DataSet insertFitnessData() {
-        Log.i(TAG, "Creating a new data insert request.");
+//        Log.i(TAG, "Creating a new data insert request.");
 
         // [START build_insert_data_request]
         // Set a start and end time for our data, using a start time of 1 hour before this moment.
@@ -236,12 +246,11 @@ public class sleepHistory extends AppCompatActivity {
         Date now = new Date();
         cal.setTime(now);
         long endTime = cal.getTimeInMillis();
-        cal.add(Calendar.WEEK_OF_YEAR, -1);
+        cal.add(Calendar.DAY_OF_YEAR, -1);
         long startTime = cal.getTimeInMillis();
 
         java.text.DateFormat dateFormat = getDateInstance();
-        Log.i(TAG, "Range Start: " + dateFormat.format(startTime));
-        Log.i(TAG, "Range End: " + dateFormat.format(endTime));
+        Log.i(TAG, "Range: " + dateFormat.format(startTime) + " - " + dateFormat.format(endTime));
 
         DataReadRequest readRequest = new DataReadRequest.Builder()
                 // The data request can specify multiple data types to return, effectively
@@ -274,8 +283,6 @@ public class sleepHistory extends AppCompatActivity {
         // If the DataReadRequest object specified aggregated data, dataReadResult will be returned
         // as buckets containing DataSets, instead of just DataSets.
         if (dataReadResult.getBuckets().size() > 0) {
-            Log.i(TAG, "Number of returned buckets of DataSets is: "
-                    + dataReadResult.getBuckets().size());
             for (Bucket bucket : dataReadResult.getBuckets()) {
                 List<DataSet> dataSets = bucket.getDataSets();
                 for (DataSet dataSet : dataSets) {
@@ -283,8 +290,6 @@ public class sleepHistory extends AppCompatActivity {
                 }
             }
         } else if (dataReadResult.getDataSets().size() > 0) {
-            Log.i(TAG, "Number of returned DataSets is: "
-                    + dataReadResult.getDataSets().size());
             for (DataSet dataSet : dataReadResult.getDataSets()) {
                 dumpDataSet(dataSet);
             }
@@ -300,10 +305,7 @@ public class sleepHistory extends AppCompatActivity {
         String activityType = "";
         for (DataPoint dp : dataSet.getDataPoints()) {
             //Log.i(TAG, dp.getOriginalDataSource().getStreamIdentifier().toString());
-            Log.i(TAG, "Data point:");
-            Log.i(TAG, "\tType: " + dp.getDataType().getName());
-            Log.i(TAG, "\tStart: " + dateFormat.format(dp.getStartTime(TimeUnit.MILLISECONDS)));
-            Log.i(TAG, "\tEnd: " + dateFormat.format(dp.getEndTime(TimeUnit.MILLISECONDS)));
+
             for(Field field : dp.getDataType().getFields()) {
                 try {
                     activityType = dp.getOriginalDataSource().getAppPackageName().toString();
@@ -313,10 +315,14 @@ public class sleepHistory extends AppCompatActivity {
                 if(activityType.contains("sleep") && field.getName().contains("duration")){
                     Value value = dp.getValue(field);
                     sleepHours  = (float) (Math.round((value.asInt() * 2.778 * 0.0000001*10.0))/10.0);
+                    Log.i(TAG, "Data point:");
+                    Log.i(TAG, "\tType: " + dp.getDataType().getName());
+                    Log.i(TAG, "\tStart: " + dateFormat.format(dp.getStartTime(TimeUnit.MILLISECONDS)));
+                    Log.i(TAG, "\tEnd: " + dateFormat.format(dp.getEndTime(TimeUnit.MILLISECONDS)));
                     Log.i(TAG, "\tField: Sleep duration in h " + sleepHours);
+                    Log.i(TAG, "\tField: " + field.getName() +
+                            " Value: " + dp.getValue(field));
                 }
-                Log.i(TAG, "\tField: " + field.getName() +
-                        " Value: " + dp.getValue(field));
             }
         }
     }
