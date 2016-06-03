@@ -1,4 +1,4 @@
-package de.ludetis.android.DriverStatus;
+package com.gm.android.DriverStatus;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -17,10 +17,10 @@ import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.common.api.Status;
-import de.ludetis.android.DriverStatus.logger.Log;
-import de.ludetis.android.DriverStatus.logger.LogView;
-import de.ludetis.android.DriverStatus.logger.LogWrapper;
-import de.ludetis.android.DriverStatus.logger.MessageOnlyLogFilter;
+import com.gm.android.DriverStatus.logger.Log;
+import com.gm.android.DriverStatus.logger.LogView;
+import com.gm.android.DriverStatus.logger.LogWrapper;
+import com.gm.android.DriverStatus.logger.MessageOnlyLogFilter;
 import com.google.android.gms.fitness.Fitness;
 import com.google.android.gms.fitness.data.Bucket;
 import com.google.android.gms.fitness.data.DataPoint;

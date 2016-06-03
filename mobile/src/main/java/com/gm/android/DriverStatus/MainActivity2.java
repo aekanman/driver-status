@@ -1,4 +1,4 @@
-package de.ludetis.android.DriverStatus;
+package com.gm.android.DriverStatus;
 
 /**
  * Created by 2908User on 5/27/16.
@@ -9,8 +9,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import de.ludetis.android.DriverStatus.logger.Log;
-import de.ludetis.android.DriverStatus.logger.LogView;
+import com.gm.android.DriverStatus.logger.Log;
+import com.gm.android.DriverStatus.logger.LogView;
 import com.google.android.gms.fitness.Fitness;
 import com.google.android.gms.fitness.data.DataPoint;
 import com.google.android.gms.fitness.data.DataSet;

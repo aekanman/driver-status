@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.ludetis.android.DriverStatus.logger;
+package com.gm.android.DriverStatus.logger;
 
 import android.util.Log;
 

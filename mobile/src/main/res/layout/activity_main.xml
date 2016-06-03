@@ -166,7 +166,7 @@
             android:layout_width="fill_parent"
             android:layout_below="@+id/gyroZLabel"
             android:layout_height="fill_parent">
-            <de.ludetis.android.DriverStatus.logger.LogView
+            <com.gm.android.DriverStatus.logger.LogView
                 android:id="@+id/sample_logview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

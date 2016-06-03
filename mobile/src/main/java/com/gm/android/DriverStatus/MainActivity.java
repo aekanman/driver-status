@@ -19,7 +19,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import com.gm.android.DriverStatus.DataLayerListenerService;
 import android.content.Intent;
-import de.ludetis.android.DriverStatus.sleepHistory;
+import com.gm.android.DriverStatus.sleepHistory;
 
 import java.util.List;
 

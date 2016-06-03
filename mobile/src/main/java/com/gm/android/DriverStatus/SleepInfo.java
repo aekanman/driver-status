@@ -1,4 +1,4 @@
-package de.ludetis.android.DriverStatus;
+package com.gm.android.DriverStatus;
 
 /**
  * Created by 2908User on 5/25/16.
