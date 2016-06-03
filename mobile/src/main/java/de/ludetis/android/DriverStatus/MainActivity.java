@@ -33,7 +33,7 @@ public class MainActivity extends Activity implements GoogleApiClient.Connection
     private TextView textView6;
     private TextView textView7;
     private GoogleApiClient mGoogleApiClient;
-    private static final String LOG_TAG = "MyHeartPhone";
+    private static final String LOG_TAG = "DriverStatus";
     private static final String START_ACTIVITY = "/start_activity";
     private static final String WEAR_MESSAGE_PATH = "/message";
 

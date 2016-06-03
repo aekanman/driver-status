@@ -14,7 +14,7 @@ import com.google.android.gms.wearable.WearableListenerService;
 public class DataLayerListenerService extends WearableListenerService {
 
     private static final String LOG_TAG = "WearableListener";
-    public static final String HEARTBEAT = "HEARTBEAT";
+    public static final String HEARTBEAT = "DriverStatus";
 
     private static Handler handler;
     private static String currentValue = "";

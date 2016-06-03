@@ -18,11 +18,12 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.wearable.MessageApi.MessageListener;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.wearable.Wearable;
+import com.gm.android.DriverStatus.HeartbeatService;
 
 public class WearActivity extends Activity implements HeartbeatService.OnChangeListener {
 
 
-    private static final String LOG_TAG = "MyHeart";
+    private static final String LOG_TAG = "DriverStatus";
 
     private TextView mTextView;
     private GoogleApiClient mGoogleApiClient;

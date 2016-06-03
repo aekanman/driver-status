@@ -1,10 +1,11 @@
 package com.gm.android.DriverStatus;
+
 import com.google.android.gms.wearable.WearableListenerService;
 import com.google.android.gms.wearable.MessageEvent;
 import android.content.Intent;
 import android.os.Message;
 import android.util.Log;
-
+import com.gm.android.DriverStatus.WearActivity;
 
 /**
  * Created by 2908User on 5/18/16.

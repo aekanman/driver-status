@@ -40,7 +40,7 @@ public class HeartbeatService extends Service implements SensorEventListener {
     private double newValueX = 0;
     private double newValueY = 0;
     private double newValueZ = 0;
-    private static final String LOG_TAG = "MyHeart";
+    private static final String LOG_TAG = "DriverStatus";
     private IBinder binder = new HeartbeatServiceBinder();
     private OnChangeListener onChangeListener;
     private GoogleApiClient mGoogleApiClient;
