@@ -17,6 +17,9 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.wearable.MessageApi;
 import org.json.JSONException;
 import org.json.JSONObject;
+import com.gm.android.DriverStatus.DataLayerListenerService;
+import android.content.Intent;
+import de.ludetis.android.DriverStatus.sleepHistory;
 
 import java.util.List;
 
@@ -111,6 +114,10 @@ public class MainActivity extends Activity implements GoogleApiClient.Connection
         textView7 = (TextView) findViewById(R.id.gyroZ);
         mGoogleApiClient = new GoogleApiClient.Builder(this).addApi(Wearable.API).build();
         mGoogleApiClient.connect();
+
+        Intent myIntent = new Intent(MainActivity.this, sleepHistory.class);
+//        myIntent.putExtra("key", value); //Optional parameters
+        MainActivity.this.startActivity(myIntent);
     }
 
     @Override

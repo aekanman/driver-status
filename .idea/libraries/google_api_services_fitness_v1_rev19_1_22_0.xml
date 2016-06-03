@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="google-api-services-fitness-v1-rev19-1.22.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.apis/google-api-services-fitness/v1-rev19-1.22.0/58277442e948507414da0cf4a1a8667698b84064/google-api-services-fitness-v1-rev19-1.22.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.apis/google-api-services-fitness/v1-rev19-1.22.0/6db78b1733d4d3e19eaad78c1074ead0ab828fa3/google-api-services-fitness-v1-rev19-1.22.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
