@@ -29,7 +29,7 @@ import java.util.concurrent.TimeUnit;
  * This sample demonstrates how to use the History API of the Google Fit platform
  * to update data in the fitness history.
  */
-public class MainActivity2 extends sleepHistory {
+public class MainActivity2 extends MainActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
