@@ -19,7 +19,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import com.gm.android.DriverStatus.DataLayerListenerService;
 import android.content.Intent;
-import com.gm.android.DriverStatus.sleepHistory;
 
 import java.util.List;
 
@@ -35,7 +34,6 @@ public class MainActivity extends Activity implements GoogleApiClient.Connection
     private GoogleApiClient mGoogleApiClient;
     private static final String LOG_TAG = "DriverStatus";
     private static final String START_ACTIVITY = "/start_activity";
-    private static final String WEAR_MESSAGE_PATH = "/message";
 
     private Handler handler = new Handler() {
         @Override
@@ -117,6 +115,8 @@ public class MainActivity extends Activity implements GoogleApiClient.Connection
 
         Intent myIntent = new Intent(MainActivity.this, sleepHistory.class);
 //        myIntent.putExtra("key", value); //Optional parameters
+        MainActivity.this.startActivity(myIntent);
+        myIntent = new Intent(MainActivity.this, MainActivity.class);
         MainActivity.this.startActivity(myIntent);
     }
 

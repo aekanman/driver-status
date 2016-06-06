@@ -24,10 +24,10 @@ public class DataLayerListenerService extends WearableListenerService {
     }
 
     public static void setHandler(Handler handler) {
-        DataLayerListenerService.handler = handler;
         // send current value as initial value.
-        if(handler!=null);
-            //handler.sendEmptyMessage(currentValue);
+        if(handler!=null){
+            DataLayerListenerService.handler = handler;
+        }
     }
 
     @Override

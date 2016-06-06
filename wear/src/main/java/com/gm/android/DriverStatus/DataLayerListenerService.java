@@ -13,7 +13,6 @@ import com.gm.android.DriverStatus.WearActivity;
 public class DataLayerListenerService extends WearableListenerService {
 
     private static final String START_ACTIVITY = "/start_activity";
-    private static final String WEAR_MESSAGE_PATH = "/message";
     private static final String LOG_TAG = "phonetowearable";
     @Override
     public void onMessageReceived(MessageEvent messageEvent) {
