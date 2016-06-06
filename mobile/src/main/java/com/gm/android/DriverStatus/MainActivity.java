@@ -173,10 +173,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         mGoogleApiClient = new GoogleApiClient.Builder(this).addApi(Wearable.API).build();
         mGoogleApiClient.connect();
 
-//        Intent myIntent = new Intent(MainActivity.this, sleepHistory.class);
-//        myIntent.putExtra("key", value); //Optional parameters
-//        MainActivity.this.startActivity(myIntent);
-
 //        setContentView(R.layout.activity_main);
         // This method sets up our custom logger, which will print all log messages to the device
         // screen, as well as to adb logcat.

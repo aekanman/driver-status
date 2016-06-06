@@ -22,7 +22,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="057565c5-8534-4465-9e53-93314bca8521" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/src/main/java/com/gm/android/DriverStatus/sleepHistory.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/mobile/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/src/main/java/com/gm/android/DriverStatus/MainActivity.java" afterPath="$PROJECT_DIR$/mobile/src/main/java/com/gm/android/DriverStatus/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/src/main/java/com/gm/android/DriverStatus/MainActivity2.java" afterPath="$PROJECT_DIR$/mobile/src/main/java/com/gm/android/DriverStatus/MainActivity2.java" />
     </list>
     <ignored path="DriverStatus.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,16 +67,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mobile/src/main/java/com/gm/android/DriverStatus/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-26.777779">
-              <caret line="184" column="12" selection-start-line="184" selection-start-column="12" selection-end-line="184" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.5831325">
+              <caret line="182" column="9" selection-start-line="182" selection-start-column="9" selection-end-line="182" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4081#6425#0" expanded="true" />
                 <element signature="e#6424#6425#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity2.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mobile/src/main/java/com/gm/android/DriverStatus/MainActivity2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -87,18 +101,6 @@
           </provider>
           <provider editor-type-id="android-designer">
             <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sleepHistory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mobile/src/main/java/com/gm/android/DriverStatus/sleepHistory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="411" column="5" selection-start-line="93" selection-start-column="4" selection-end-line="411" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
           </provider>
         </entry>
       </file>
@@ -123,19 +125,6 @@
         </entry>
       </file>
       <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wear/src/main/res/layout/activity_main.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.981132">
-              <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mobile/src/main/res/layout/activity_main.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-1.125">
@@ -148,10 +137,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HeartbeatService.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HeartbeatService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wear/src/main/java/com/gm/android/DriverStatus/HeartbeatService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.004525">
+            <state vertical-scroll-proportion="0.0">
               <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
               <folding />
             </state>
@@ -3183,9 +3172,9 @@
         <option value="$PROJECT_DIR$/mobile/src/main/java/com/gm/android/DriverStatus/sleepHistory.java" />
         <option value="$PROJECT_DIR$/mobile/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/mobile/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/mobile/src/main/java/com/gm/android/DriverStatus/MainActivity2.java" />
         <option value="$PROJECT_DIR$/wear/src/main/java/com/gm/android/DriverStatus/DataLayerListenerService.java" />
         <option value="$PROJECT_DIR$/mobile/src/main/java/com/gm/android/DriverStatus/DataLayerListenerService.java" />
+        <option value="$PROJECT_DIR$/mobile/src/main/java/com/gm/android/DriverStatus/MainActivity2.java" />
         <option value="$PROJECT_DIR$/mobile/src/main/java/com/gm/android/DriverStatus/MainActivity.java" />
       </list>
     </option>
@@ -3852,8 +3841,7 @@
           <folding>
             <element signature="e#420#438#0" expanded="true" />
             <element signature="e#633#651#0" expanded="true" />
-            <element signature="e#910#928#0" expanded="true" />
-            <element signature="e#1321#1360#0" expanded="true" />
+            <element signature="e#1212#1251#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3884,8 +3872,7 @@
           <folding>
             <element signature="e#420#438#0" expanded="true" />
             <element signature="e#633#651#0" expanded="true" />
-            <element signature="e#910#928#0" expanded="true" />
-            <element signature="e#1321#1360#0" expanded="true" />
+            <element signature="e#1212#1251#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3905,8 +3892,7 @@
           <folding>
             <element signature="e#420#438#0" expanded="true" />
             <element signature="e#633#651#0" expanded="true" />
-            <element signature="e#910#928#0" expanded="true" />
-            <element signature="e#1321#1360#0" expanded="true" />
+            <element signature="e#1212#1251#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3926,8 +3912,7 @@
           <folding>
             <element signature="e#420#438#0" expanded="true" />
             <element signature="e#633#651#0" expanded="true" />
-            <element signature="e#910#928#0" expanded="true" />
-            <element signature="e#1321#1360#0" expanded="true" />
+            <element signature="e#1212#1251#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -4079,9 +4064,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.875">
           <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-          <folding>
-            <element signature="e#910#928#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -4090,16 +4073,6 @@
         <state vertical-scroll-proportion="0.44444445">
           <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mobile/src/main/java/com/gm/android/DriverStatus/MainActivity2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.5555553">
-          <caret line="43" column="65" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4187,16 +4160,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mobile/src/main/java/com/gm/android/DriverStatus/sleepHistory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="411" column="5" selection-start-line="93" selection-start-column="4" selection-end-line="411" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mobile/src/main/res/layout/sleep_history.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.924528">
@@ -4206,18 +4169,6 @@
       </provider>
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mobile/src/main/java/com/gm/android/DriverStatus/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.777779">
-          <caret line="184" column="12" selection-start-line="184" selection-start-column="12" selection-end-line="184" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4081#6425#0" expanded="true" />
-            <element signature="e#6424#6425#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mobile/src/main/res/layout/activity_main.xml">
@@ -4241,9 +4192,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wear/src/main/java/com/gm/android/DriverStatus/HeartbeatService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.004525">
+        <state vertical-scroll-proportion="0.0">
           <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobile/src/main/java/com/gm/android/DriverStatus/MainActivity2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobile/src/main/java/com/gm/android/DriverStatus/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5831325">
+          <caret line="182" column="9" selection-start-line="182" selection-start-column="9" selection-end-line="182" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4081#6425#0" expanded="true" />
+            <element signature="e#6424#6425#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
