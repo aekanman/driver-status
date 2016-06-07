@@ -81,12 +81,16 @@ public class MainActivity2 extends MainActivity {
             // [END update_data_request]
 
             // Create the query.
-            DataReadRequest readRequest = queryFitnessData();
+            DataReadRequest readRequestForSleep = querySleepData();
+            DataReadResult dataReadResultForSleep =
+                    Fitness.HistoryApi.readData(mClient, readRequestForSleep).await(1, TimeUnit.MINUTES);
 
-            DataReadResult dataReadResult =
-                    Fitness.HistoryApi.readData(mClient, readRequest).await(1, TimeUnit.MINUTES);
+            DataReadRequest readRequestForActivity = queryActivityData();
+            DataReadResult dataReadResultForActivity =
+                    Fitness.HistoryApi.readData(mClient, readRequestForActivity).await(1, TimeUnit.MINUTES);
 
-            printData(dataReadResult);
+            printData(dataReadResultForSleep);
+            printData(dataReadResultForActivity);
 
             return null;
         }

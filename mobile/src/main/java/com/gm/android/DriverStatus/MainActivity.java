@@ -250,7 +250,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                                 // Insert - Commented out
                                 new InsertAndVerifyDataTask().execute();
 
-//                                DataReadRequest readRequest = queryFitnessData();
+//                                DataReadRequest readRequest = querySleepData();
 
                                 // [START read_dataset]
                                 // Invoke the History API to fetch the data with the query and await the result of
@@ -323,19 +323,23 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
             // [END insert_dataset]
 
             // Begin by creating the query.
-            DataReadRequest readRequest = queryFitnessData();
+            DataReadRequest readRequestForSleep = querySleepData();
+            DataReadRequest readRequestForActivity = queryActivityData();
 
             // [START read_dataset]
             // Invoke the History API to fetch the data with the query and await the result of
             // the read request.
-            DataReadResult dataReadResult =
-                    Fitness.HistoryApi.readData(mClient, readRequest).await(1, TimeUnit.MINUTES);
+            DataReadResult dataReadResultForSleep =
+                    Fitness.HistoryApi.readData(mClient, readRequestForSleep).await(1, TimeUnit.MINUTES);
+            DataReadResult dataReadResultForActivity =
+                    Fitness.HistoryApi.readData(mClient, readRequestForActivity).await(1, TimeUnit.MINUTES);
 
             // [END read_dataset]
 
             // For the sake of the sample, we'll print the data so we can see what we just added.
             // In general, logging fitness information should be avoided for privacy reasons.
-            printData(dataReadResult);
+            printData(dataReadResultForSleep);
+            printData(dataReadResultForActivity);
 
             return null;
         }
@@ -359,19 +363,19 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         // Create a data source
         DataSource dataSource = new DataSource.Builder()
                 .setAppPackageName(this)
-                .setDataType(DataType.TYPE_HEART_RATE_BPM)
-                .setStreamName(TAG + " - BPM")
+                .setDataType(DataType.TYPE_STEP_COUNT_CUMULATIVE)
+                .setStreamName(TAG + " - STEP")
                 .setType(DataSource.TYPE_RAW)
                 .build();
 
         // Create a data set
-        float BPM = 95;
+        int stepCount = 3500;
         DataSet dataSet = DataSet.create(dataSource);
         // For each data point, specify a start time, end time, and the data value -- in this case,
         // the number of new steps.
         DataPoint dataPoint = dataSet.createDataPoint()
                 .setTimeInterval(startTime, endTime, TimeUnit.MILLISECONDS);
-        dataPoint.getValue(Field.FIELD_BPM).setFloat(BPM);
+        dataPoint.getValue(Field.FIELD_STEPS).setInt(stepCount);
         dataSet.add(dataPoint);
         // [END build_insert_data_request]
 
@@ -379,9 +383,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     }
 
     /**
-     * Return a {@link DataReadRequest} for all step count changes in the past week.
+     * Return a {@link DataReadRequest} for all sleep duration changes in the past night.
      */
-    public static DataReadRequest queryFitnessData() {
+    public static DataReadRequest querySleepData() {
         // [START build_read_data_request]
         // Setting a start and end date using a range of 1 week before this moment.
         Calendar cal = Calendar.getInstance();
@@ -401,6 +405,40 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                 // datapoints each consisting of a few steps and a timestamp.  The more likely
                 // scenario is wanting to see how many steps were walked per day, for 7 days.
                 .aggregate(DataType.TYPE_ACTIVITY_SEGMENT, DataType.AGGREGATE_ACTIVITY_SUMMARY)
+                // Analogous to a "Group By" in SQL, defines how data should be aggregated.
+                // bucketByTime allows for a time span, whereas bucketBySession would allow
+                // bucketing by "sessions", which would need to be defined in code.
+                .bucketByTime(1, TimeUnit.DAYS)
+                .setTimeRange(startTime, endTime, TimeUnit.MILLISECONDS)
+                .build();
+        // [END build_read_data_request]
+
+        return readRequest;
+    }
+
+    /**
+     * Return a {@link DataReadRequest} for all step count changes in the past week.
+     */
+    public static DataReadRequest queryActivityData() {
+        // [START build_read_data_request]
+        // Setting a start and end date using a range of 1 week before this moment.
+        Calendar cal = Calendar.getInstance();
+        Date now = new Date();
+        cal.setTime(now);
+        long endTime = cal.getTimeInMillis();
+        cal.add(Calendar.DAY_OF_YEAR, -1);
+        long startTime = cal.getTimeInMillis();
+
+        java.text.DateFormat dateFormat = getDateInstance();
+        com.gm.android.DriverStatus.logger.Log.i(TAG, "Range: " + dateFormat.format(startTime) + " - " + dateFormat.format(endTime));
+
+        DataReadRequest readRequest = new DataReadRequest.Builder()
+                // The data request can specify multiple data types to return, effectively
+                // combining multiple data queries into one call.
+                // In this example, it's very unlikely that the request is for several hundred
+                // datapoints each consisting of a few steps and a timestamp.  The more likely
+                // scenario is wanting to see how many steps were walked per day, for 7 days.
+                .aggregate(DataType.TYPE_STEP_COUNT_DELTA, DataType.AGGREGATE_STEP_COUNT_DELTA)
                 // Analogous to a "Group By" in SQL, defines how data should be aggregated.
                 // bucketByTime allows for a time span, whereas bucketBySession would allow
                 // bucketing by "sessions", which would need to be defined in code.
@@ -462,6 +500,14 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                     com.gm.android.DriverStatus.logger.Log.i(TAG, "\tStart: " + dateFormat.format(dp.getStartTime(TimeUnit.MILLISECONDS)));
                     com.gm.android.DriverStatus.logger.Log.i(TAG, "\tEnd: " + dateFormat.format(dp.getEndTime(TimeUnit.MILLISECONDS)));
                     com.gm.android.DriverStatus.logger.Log.i(TAG, "\tField: Sleep duration in h " + sleepHours);
+                    com.gm.android.DriverStatus.logger.Log.i(TAG, "\tField: " + field.getName() +
+                            " Value: " + dp.getValue(field));
+                }
+                else if(field.getName().contains("steps")){
+                    com.gm.android.DriverStatus.logger.Log.i(TAG, "Data point:");
+                    com.gm.android.DriverStatus.logger.Log.i(TAG, "\tType: " + dp.getDataType().getName());
+                    com.gm.android.DriverStatus.logger.Log.i(TAG, "\tStart: " + dateFormat.format(dp.getStartTime(TimeUnit.MILLISECONDS)));
+                    com.gm.android.DriverStatus.logger.Log.i(TAG, "\tEnd: " + dateFormat.format(dp.getEndTime(TimeUnit.MILLISECONDS)));
                     com.gm.android.DriverStatus.logger.Log.i(TAG, "\tField: " + field.getName() +
                             " Value: " + dp.getValue(field));
                 }
