@@ -79,7 +79,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     public static final String TAG = "SleepHistory";
     private static final int REQUEST_OAUTH = 1;
     private static final String DATE_FORMAT = "yyyy.MM.dd HH:mm:ss";
-
+    private static boolean sleepFlag = false;
+    private static boolean firstDump = true;
     /**
      *  Track whether an authorization activity is stacking over the current activity, i.e. when
      *  a known auth error is being resolved, such as showing the account chooser or presenting a
@@ -430,7 +431,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         long startTime = cal.getTimeInMillis();
 
         java.text.DateFormat dateFormat = getDateInstance();
-        com.gm.android.DriverStatus.logger.Log.i(TAG, "Range: " + dateFormat.format(startTime) + " - " + dateFormat.format(endTime));
+//        com.gm.android.DriverStatus.logger.Log.i(TAG, "Range: " + dateFormat.format(startTime) + " - " + dateFormat.format(endTime));
 
         DataReadRequest readRequest = new DataReadRequest.Builder()
                 // The data request can specify multiple data types to return, effectively
@@ -493,6 +494,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                     e.printStackTrace();
                 }
                 if(activityType.contains("sleep") && field.getName().contains("duration")){
+                    sleepFlag = true;
                     Value value = dp.getValue(field);
                     sleepHours  = (float) (Math.round((value.asInt() * 2.778 * 0.0000001*10.0))/10.0);
                     com.gm.android.DriverStatus.logger.Log.i(TAG, "Data point:");
@@ -512,6 +514,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                             " Value: " + dp.getValue(field));
                 }
             }
+        }
+        if(!sleepFlag && firstDump){
+            com.gm.android.DriverStatus.logger.Log.i(TAG, "\tSleep data not found for last night");
+            firstDump = false;
         }
     }
     // [END parse_dataset]
