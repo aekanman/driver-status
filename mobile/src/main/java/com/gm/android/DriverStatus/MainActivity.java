@@ -482,6 +482,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         //Log.i(TAG, "Data returned for Data type: " + dataSet.getDataType().getName());
         DateFormat dateFormat = getTimeInstance();
         float sleepHours = 0;
+        boolean sleepFlag = false;
         String activityType = "";
         for (DataPoint dp : dataSet.getDataPoints()) {
             //Log.i(TAG, dp.getOriginalDataSource().getStreamIdentifier().toString());
@@ -493,6 +494,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                     e.printStackTrace();
                 }
                 if(activityType.contains("sleep") && field.getName().contains("duration")){
+                    sleepFlag = true;
                     Value value = dp.getValue(field);
                     sleepHours  = (float) (Math.round((value.asInt() * 2.778 * 0.0000001*10.0))/10.0);
                     com.gm.android.DriverStatus.logger.Log.i(TAG, "Data point:");
@@ -510,6 +512,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                     com.gm.android.DriverStatus.logger.Log.i(TAG, "\tEnd: " + dateFormat.format(dp.getEndTime(TimeUnit.MILLISECONDS)));
                     com.gm.android.DriverStatus.logger.Log.i(TAG, "\tField: " + field.getName() +
                             " Value: " + dp.getValue(field));
+                }
+                if(sleepFlag){
+                    com.gm.android.DriverStatus.logger.Log.i(TAG, "\tSleep data not found for last night");
                 }
             }
         }
