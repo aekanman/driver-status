@@ -79,10 +79,31 @@ public class WearActivity extends Activity implements HeartbeatService.OnChangeL
     }
 
 
-    public void onValueChanged(int newValue){
+    public void onValueChanged(String Str, double newValue){
         // will be called by the service whenever the heartbeat value changes
-        //Log.d(LOG_TAG, "value change activity");
-        //mTextView.setText(Integer.toString(newValue));
 
+        switch (Str){
+            case "HR":
+                mTextView.setText(Double.toString(newValue));
+                break;
+            case "AX":
+                mTextView4.setText(Double.toString(newValue));
+                break;
+            case "AY":
+                mTextView5.setText(Double.toString(newValue));
+                break;
+            case "AZ":
+                mTextView6.setText(Double.toString(newValue));
+                break;
+            case "GX":
+                mTextView1.setText(Double.toString(newValue));
+                break;
+            case "GY":
+                mTextView2.setText(Double.toString(newValue));
+                break;
+            case "GZ":
+                mTextView3.setText(Double.toString(newValue));
+                break;
+        }
     }
 }

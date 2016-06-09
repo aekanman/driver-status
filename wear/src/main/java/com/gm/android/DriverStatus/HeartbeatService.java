@@ -65,7 +65,7 @@ public class HeartbeatService extends Service implements SensorEventListener {
 
     // interface to pass a heartbeat value to the implementing class
     public interface OnChangeListener {
-        void onValueChanged(int newValue);
+        void onValueChanged(String str, double newValue);
     }
 
     /**
@@ -75,7 +75,7 @@ public class HeartbeatService extends Service implements SensorEventListener {
         public void setChangeListener(OnChangeListener listener) {
             onChangeListener = listener;
             // return currently known value
-            listener.onValueChanged(HRcurrentValue);
+            listener.onValueChanged("HR", HRcurrentValue);
         }
     }
 
@@ -138,7 +138,7 @@ public class HeartbeatService extends Service implements SensorEventListener {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
-                    onChangeListener.onValueChanged(newValue);
+                    onChangeListener.onValueChanged("HR", newValue);
                 }
             }
         }
@@ -169,7 +169,7 @@ public class HeartbeatService extends Service implements SensorEventListener {
                         e.printStackTrace();
                     }
                     accCountX = 0;
-                    onChangeListener.onValueChanged((int)newValueX);
+                    onChangeListener.onValueChanged("AX", average);
                 }
                 else{
                     msgString = msgString.concat("panic1");
@@ -192,7 +192,7 @@ public class HeartbeatService extends Service implements SensorEventListener {
                         e.printStackTrace();
                     }
                     accCountY = 0;
-                    onChangeListener.onValueChanged((int)newValueY);
+                    onChangeListener.onValueChanged("AY", average);
                 }
                 else{
                     msgString = msgString.concat("panic1");
@@ -215,7 +215,7 @@ public class HeartbeatService extends Service implements SensorEventListener {
                         e.printStackTrace();
                     }
                     accCountZ = 0;
-                    onChangeListener.onValueChanged((int)newValueZ);
+                    onChangeListener.onValueChanged("AZ", average);
                 }
                 else{
                     msgString = msgString.concat("panic1");
@@ -245,7 +245,7 @@ public class HeartbeatService extends Service implements SensorEventListener {
                         e.printStackTrace();
                     }
                     gyroCountX = 0;
-                    onChangeListener.onValueChanged((int) newValueX);
+                    onChangeListener.onValueChanged("GX", average);
                 }
             }
             if(GYROcurrentValueY != newValueY && newValueY!=0) {
@@ -265,7 +265,7 @@ public class HeartbeatService extends Service implements SensorEventListener {
                         e.printStackTrace();
                     }
                     gyroCountY = 0;
-                    onChangeListener.onValueChanged((int) newValueY);
+                    onChangeListener.onValueChanged("GY", average);
                 }
             }
             if(GYROcurrentValueZ != newValueZ && newValueZ!=0) {
@@ -285,7 +285,7 @@ public class HeartbeatService extends Service implements SensorEventListener {
                         e.printStackTrace();
                     }
                     gyroCountZ = 0;
-                    onChangeListener.onValueChanged((int) newValueZ);
+                    onChangeListener.onValueChanged("GZ", average);
                 }
             }
         }

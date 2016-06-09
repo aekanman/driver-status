@@ -20,75 +20,72 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gx:0.0"
+            android:text="0.0"
             android:id="@+id/Gx"
             android:layout_gravity="left|center_vertical"
             android:textSize="24dp"
             android:textColor="@color/ambient_mode_text"
+            android:layout_marginTop="62dp"
             android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="63dp" />
+            android:layout_toStartOf="@+id/heartbeat" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gy:0.0"
+            android:text="0.0"
             android:id="@+id/Gy"
             android:layout_gravity="center"
             android:textSize="24dp"
             android:textColor="@color/ambient_mode_text"
+            android:layout_marginLeft="21dp"
             android:layout_below="@+id/Gx"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="21dp" />
+            android:layout_alignEnd="@+id/Gz" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gz:0.0"
+            android:text="0.0"
             android:id="@+id/Gz"
             android:layout_gravity="center"
             android:textSize="24dp"
             android:textColor="@color/ambient_mode_text"
+            android:layout_marginLeft="51dp"
             android:layout_below="@+id/Gy"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="21dp" />
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="22dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ax:0.00"
+            android:text="0.00"
             android:id="@+id/Ax"
             android:layout_gravity="left|center_vertical"
             android:textSize="24dp"
+            android:textColor="@color/ambient_mode_text"
             android:layout_alignTop="@+id/Gx"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="18dp"
-            android:textColor="@color/ambient_mode_text" />
+            android:layout_toEndOf="@+id/textView" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ay:0.00"
+            android:text="0.00"
             android:id="@+id/Ay"
             android:layout_gravity="center"
             android:textSize="24dp"
+            android:textColor="@color/ambient_mode_text"
             android:layout_below="@+id/Ax"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="21dp"
-            android:textColor="@color/ambient_mode_text" />
+            android:layout_toRightOf="@+id/textView" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Az:0.00"
+            android:text="0.00"
             android:id="@+id/Az"
             android:layout_gravity="center"
             android:textSize="24dp"
+            android:textColor="@color/ambient_mode_text"
             android:layout_below="@+id/Ay"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="21dp"
-            android:textColor="@color/ambient_mode_text" />
+            android:layout_toRightOf="@+id/textView" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -97,6 +94,72 @@
             android:background="@mipmap/ic_launcher"
             android:layout_alignBottom="@+id/heartbeat"
             android:layout_alignEnd="@+id/Gz" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ax:"
+            android:id="@+id/textView"
+            android:layout_gravity="left|center_vertical"
+            android:textSize="24dp"
+            android:textColor="@color/ambient_mode_text"
+            android:layout_alignTop="@+id/Ax"
+            android:layout_toEndOf="@+id/heartbeat" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ay:"
+            android:id="@+id/textView2"
+            android:layout_gravity="center"
+            android:textSize="24dp"
+            android:textColor="@color/ambient_mode_text"
+            android:layout_below="@+id/textView"
+            android:layout_toRightOf="@+id/heartbeat" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Az:"
+            android:id="@+id/textView3"
+            android:layout_gravity="center"
+            android:textSize="24dp"
+            android:textColor="@color/ambient_mode_text"
+            android:layout_below="@+id/textView2"
+            android:layout_toRightOf="@+id/heartbeat" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gx:"
+            android:id="@+id/textView4"
+            android:layout_gravity="left|center_vertical"
+            android:textSize="24dp"
+            android:textColor="@color/ambient_mode_text"
+            android:layout_below="@+id/imageView"
+            android:layout_toStartOf="@+id/Gx" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gz:"
+            android:id="@+id/textView5"
+            android:layout_gravity="center"
+            android:textSize="24dp"
+            android:textColor="@color/ambient_mode_text"
+            android:layout_alignTop="@+id/Gz"
+            android:layout_alignEnd="@+id/textView6" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gy:"
+            android:id="@+id/textView6"
+            android:layout_gravity="center"
+            android:textSize="24dp"
+            android:textColor="@color/ambient_mode_text"
+            android:layout_below="@+id/Gx"
+            android:layout_toStartOf="@+id/Gx" />
     </RelativeLayout>
 
 </FrameLayout>
