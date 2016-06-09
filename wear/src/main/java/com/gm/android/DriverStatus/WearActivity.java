@@ -26,8 +26,16 @@ public class WearActivity extends Activity implements HeartbeatService.OnChangeL
     private static final String LOG_TAG = "DriverStatus";
 
     private TextView mTextView;
-    private GoogleApiClient mGoogleApiClient;
+    private TextView mTextView1;
+    private TextView mTextView2;
+    private TextView mTextView3;
+    private TextView mTextView4;
+    private TextView mTextView5;
+    private TextView mTextView6;
 
+    private int HRcurrentValue=0;
+
+    private GoogleApiClient mGoogleApiClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +49,12 @@ public class WearActivity extends Activity implements HeartbeatService.OnChangeL
             public void onLayoutInflated(WatchViewStub stub) {
                 // as soon as layout is there...
                 mTextView = (TextView) stub.findViewById(R.id.heartbeat);
+                mTextView1 = (TextView) stub.findViewById(R.id.Gx);
+                mTextView2 = (TextView) stub.findViewById(R.id.Gy);
+                mTextView3 = (TextView) stub.findViewById(R.id.Gz);
+                mTextView4 = (TextView) stub.findViewById(R.id.Ax);
+                mTextView5 = (TextView) stub.findViewById(R.id.Ay);
+                mTextView6 = (TextView) stub.findViewById(R.id.Az);
                 // bind to our service.
                 bindService(new Intent(WearActivity.this, HeartbeatService.class), new ServiceConnection() {
                     @Override
@@ -64,9 +78,11 @@ public class WearActivity extends Activity implements HeartbeatService.OnChangeL
         super.onResume();
     }
 
-    @Override
-    public void onValueChanged(int newValue) {
-        // will be called by the service whenever the heartbeat value changes.
-        mTextView.setText(Integer.toString(newValue));
+
+    public void onValueChanged(int newValue){
+        // will be called by the service whenever the heartbeat value changes
+        //Log.d(LOG_TAG, "value change activity");
+        //mTextView.setText(Integer.toString(newValue));
+
     }
 }

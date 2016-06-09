@@ -2,12 +2,101 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context=".WearActivity" tools:deviceIds="wear_round"
-    android:background="@drawable/background">
+    android:background="#193d8f">
 
-    <TextView android:text="11" android:layout_width="wrap_content"
-        android:id="@+id/heartbeat"
-        android:layout_height="wrap_content"
-        android:textColor="#77ff99"
-        android:textSize="128sp"
-        android:layout_gravity="center"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView android:text="11" android:layout_width="wrap_content"
+            android:id="@+id/heartbeat"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="28dp"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_above="@+id/Ax"
+            android:layout_toEndOf="@+id/Gz" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gx:0.0"
+            android:id="@+id/Gx"
+            android:layout_gravity="left|center_vertical"
+            android:textSize="24dp"
+            android:textColor="@color/ambient_mode_text"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="63dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gy:0.0"
+            android:id="@+id/Gy"
+            android:layout_gravity="center"
+            android:textSize="24dp"
+            android:textColor="@color/ambient_mode_text"
+            android:layout_below="@+id/Gx"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="21dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gz:0.0"
+            android:id="@+id/Gz"
+            android:layout_gravity="center"
+            android:textSize="24dp"
+            android:textColor="@color/ambient_mode_text"
+            android:layout_below="@+id/Gy"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="21dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ax:0.00"
+            android:id="@+id/Ax"
+            android:layout_gravity="left|center_vertical"
+            android:textSize="24dp"
+            android:layout_alignTop="@+id/Gx"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="18dp"
+            android:textColor="@color/ambient_mode_text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ay:0.00"
+            android:id="@+id/Ay"
+            android:layout_gravity="center"
+            android:textSize="24dp"
+            android:layout_below="@+id/Ax"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="21dp"
+            android:textColor="@color/ambient_mode_text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Az:0.00"
+            android:id="@+id/Az"
+            android:layout_gravity="center"
+            android:textSize="24dp"
+            android:layout_below="@+id/Ay"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="21dp"
+            android:textColor="@color/ambient_mode_text" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:background="@mipmap/ic_launcher"
+            android:layout_alignBottom="@+id/heartbeat"
+            android:layout_alignEnd="@+id/Gz" />
+    </RelativeLayout>
+
 </FrameLayout>
