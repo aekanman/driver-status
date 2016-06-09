@@ -14,8 +14,9 @@
             android:textColor="#ffffff"
             android:textSize="28dp"
             android:layout_gravity="center_horizontal|top"
-            android:layout_above="@+id/Ax"
-            android:layout_toEndOf="@+id/Gz" />
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_toEndOf="@+id/imageView"
+            android:minWidth="45dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -92,8 +93,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/imageView"
             android:background="@mipmap/ic_launcher"
-            android:layout_alignBottom="@+id/heartbeat"
-            android:layout_alignEnd="@+id/Gz" />
+            android:layout_above="@+id/textView4"
+            android:layout_alignEnd="@+id/Gy" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -103,8 +104,8 @@
             android:layout_gravity="left|center_vertical"
             android:textSize="24dp"
             android:textColor="@color/ambient_mode_text"
-            android:layout_alignTop="@+id/Ax"
-            android:layout_toEndOf="@+id/heartbeat" />
+            android:layout_alignTop="@+id/Gx"
+            android:layout_alignStart="@+id/textView2" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -136,7 +137,7 @@
             android:layout_gravity="left|center_vertical"
             android:textSize="24dp"
             android:textColor="@color/ambient_mode_text"
-            android:layout_below="@+id/imageView"
+            android:layout_alignTop="@+id/Gx"
             android:layout_toStartOf="@+id/Gx" />
 
         <TextView
