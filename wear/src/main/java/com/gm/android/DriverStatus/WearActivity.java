@@ -84,7 +84,7 @@ public class WearActivity extends Activity implements HeartbeatService.OnChangeL
 
         switch (Str){
             case "HR":
-                mTextView.setText(Double.toString(newValue));
+                mTextView.setText(Double.toString((int)newValue));
                 break;
             case "AX":
                 mTextView4.setText(Double.toString(newValue));
