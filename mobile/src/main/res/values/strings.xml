@@ -3,4 +3,6 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="server_client_id">469052267132-gk5cmdr7g294d31shubh4nn5db3f4jes.apps.googleusercontent.com</string>
+    <!--<string name="google_app_id">469052267132</string>-->
 </resources>

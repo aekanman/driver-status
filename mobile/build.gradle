@@ -1,7 +1,8 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 'android-N'
     buildToolsVersion '23.0.3'
     signingConfigs {
         releaseConfig {
@@ -13,10 +14,12 @@ android {
     }
     defaultConfig {
         applicationId "com.gm.android.DriverStatus"
-        minSdkVersion 23
-        targetSdkVersion 23
+        minSdkVersion 'N'
+        targetSdkVersion 'N'
         versionCode 1
         versionName "1.0"
+        // Enabling multidex support.
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -33,6 +36,13 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     wearApp project(':wear')
-    compile 'com.android.support:appcompat-v7:22.0.0'
-    compile 'com.google.android.gms:play-services:7.0.0'
+    compile 'com.google.apis:google-api-services-fitness:v1-rev19-1.22.0'
+    compile 'com.android.support:design:23.3.0'
+    compile 'com.android.support:multidex:1.0.0'
+    //    compile "com.google.android.gms:play-services-fitness:${google_play_services_library}"
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.google.android.gms:play-services:9.0.0'
+    compile 'com.google.android.gms:play-services-fitness:9.0.0'
+    compile 'com.google.android.gms:play-services-wearable:9.0.0'
+    compile 'com.google.gms:google-services:3.0.0'
 }
